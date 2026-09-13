@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SJC MCA CGPA Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>SJC MCA CGPA Calculator</h1>
+    <p>St. Joseph's College (Autonomous), Tiruchirappalli</p>
+</header>
+
+<main>
+
+    <h2>SGPA Calculator</h2>
+
+    <table id="subjectTable">
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+            <th>Credit</th>
+            <th>Grade</th>
+            <th>Point</th>
+        </tr>
+
+        <tr>
+            <td><input type="text" placeholder="Subject"></td>
+
+            <td>
+                <input type="number"
+                       class="marks"
+                       min="0"
+                       max="100"
+                       oninput="calculateGrade(this)">
+            </td>
+
+            <td>
+                <input type="number"
+                       class="credit"
+                       min="0"
+                       step="0.5">
+            </td>
+
+            <td class="grade">-</td>
+
+            <td class="point">-</td>
+        </tr>
+    </table>
+
+    <button onclick="addSubject()">Add Subject</button>
+    <button onclick="calculateSGPA()">Calculate SGPA</button>
+
+    <h3 id="sgpaResult"></h3>
+
+
+    <hr>
+
+
+    <h2>CGPA Calculator</h2>
+
+    <table id="semesterTable">
+
+        <tr>
+            <th>Semester</th>
+            <th>SGPA</th>
+            <th>Credits</th>
+        </tr>
+
+        <tr>
+            <td>Semester 1</td>
+
+            <td>
+                <input type="number"
+                       class="sgpa"
+                       min="0"
+                       max="10"
+                       step="0.01">
+            </td>
+
+            <td>
+                <input type="number"
+                       class="semCredit"
+                       min="0"
+                       step="0.5">
+            </td>
+        </tr>
+
+    </table>
+
+    <button onclick="addSemester()">Add Semester</button>
+    <button onclick="calculateCGPA()">Calculate CGPA</button>
+
+    <h3 id="cgpaResult"></h3>
+
+
+    <hr>
+
+
+    <h2>PG Grading System</h2>
+
+    <table>
+
+        <tr>
+            <th>Marks</th>
+            <th>Grade</th>
+            <th>Grade Point</th>
+        </tr>
+
+        <tr>
+            <td>90 and above</td>
+            <td>O</td>
+            <td>10</td>
+        </tr>
+
+        <tr>
+            <td>80 - 89</td>
+            <td>A+</td>
+            <td>9</td>
+        </tr>
+
+        <tr>
+            <td>70 - 79</td>
+            <td>A</td>
+            <td>8</td>
+        </tr>
+
+        <tr>
+            <td>60 - 69</td>
+            <td>B+</td>
+            <td>7</td>
+        </tr>
+
+        <tr>
+            <td>50 - 59</td>
+            <td>B</td>
+            <td>6</td>
+        </tr>
+
+        <tr>
+            <td>Below 50</td>
+            <td>RA</td>
+            <td>0</td>
+        </tr>
+
+    </table>
+
+    <div class="formula">
+        <p><b>SGPA</b> = Σ(Credit × Grade Point) ÷ Σ(Credit)</p>
+
+        <p><b>CGPA</b> = Σ(SGPA × Semester Credit) ÷ Σ(Semester Credit)</p>
+    </div>
+
+</main>
+
+<footer>
+    <p>SJC MCA CGPA Calculator</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
